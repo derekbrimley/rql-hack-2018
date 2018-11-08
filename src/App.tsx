@@ -1,291 +1,130 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
-import Button from '@material-ui/core/Button';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
-import { DatePicker } from 'material-ui-pickers';
 import format from 'date-fns/format';
-import MonthPicker from 'react-month-picker-input';
 import 'react-month-picker-input/dist/react-month-picker-input.css';
-import YearPicker from 'react-year-picker';
+import IconButton from '@material-ui/core/IconButton';
+import Button from '@material-ui/core/Button';
+import ValueInput from './components/ValueInput';
+import AttributeInput from './components/AttributeInput';
+import OperatorInput from './components/OperatorInput';
+import ValueTypeInput from './components/ValueTypeInput';
+import PlusIcon from '@material-ui/icons/Add';
+import RemoveIcon from '@material-ui/icons/Delete';
 
-interface ITypeValueInput {
-  type: "string" | "lexicon" | "date"
-  field: 'content' | 'subject' | 'date'
-  operator: string
-  value: any
-  onChange: (ev) => void
-}
-const ValueInput: React.SFC<ITypeValueInput> = props => {
-  switch (props.type) {
-    case 'date':
-      switch (props.operator) {
-        case 'dates':
-          return (
-            <>
-              <DatePicker
-                autoOk
-                name='value'
-                value={props.value[0]}
-                onChange={date => props.onChange([date, props.value[1]])}
-              />
-              <DatePicker
-                autoOk
-                name='value'
-                value={props.value[1]}
-                onChange={date => props.onChange([props.value[0], date])}
-              />
-            </>
-          )
-        case 'months':
-          return (
-            <>
-              <MonthPicker
-                year={2018}
-                month={11}
-                onChange={(val, year, month) => {
-                  console.log(val, year, month, new Date(year, month))
-                  props.onChange([new Date(year, month), props.value[1]])
-                }}
-                closeOnSelect
-              />
-              <MonthPicker
-                year={2018}
-                month={11}
-                onChange={(val, year, month) => {
-                  console.log(val, year, month, new Date(year, month))
-                  props.onChange([props.value[0], new Date(year, month)])
-                }}
-                closeOnSelect
-              />
-            </>
-          )
-        case 'years':
-          return (
-            <>
-              <YearPicker
-                onChange={(year) => {
-                  console.log(year, new Date(year, 0))
-                  props.onChange([new Date(year, 0), props.value[0]])
-                }}
-              />
-              <YearPicker
-                onChange={(year) => {
-                  console.log(year)
-                  props.onChange([props.value[1], new Date(year, 0)])
-                }}
-              />
-            </>
-          )
-        case 'month':
-            return (
-              <MonthPicker
-                year={2018}
-                month={11}
-                onChange={(val, year, month) => {
-                  console.log(val, year, month)
-                  props.onChange(new Date(year, month))
-                }}
-                closeOnSelect
-              />
-            )
-        case 'year':
-          return (
-            <YearPicker
-              onChange={(year) => {
-                console.log(year)
-                props.onChange(new Date(year, 0))
-              }}
-            />
-          )
-        case 'date':
-        default:
-          return (
-            <DatePicker
-              autoOk
-              name='value'
-              value={props.value}
-              onChange={date => props.onChange(date)}
-            />
-          )
-      }
-    case 'string':
-    case 'lexicon':
-    default:
-      return (
-        <TextField
-          name='value'
-          value={props.value}
-          onChange={ev => props.onChange((ev.target as any).value)}
-        />
-      )
-  }
+import rqlMetadata from './rql_metadata.json';
+import Paper from '@material-ui/core/Paper';
+
+const fieldMap = {
+  event: 'Event',
+  content: 'Content',
+  rawcontent: 'Raw Content',
+  subject: 'Subject',
+  body: 'Body',
+  rawbody: 'Rawbody',
+  entity: 'Entity',
+  attribute: 'Attribute',
+  context: 'Context',
+  date: 'Date',
+  ingested: 'Ingested',
+  mode: 'Mode',
+  label: 'Label',
+  reviewed: 'Reviewed',
+  feature: 'Feature',
+  model: 'Model',
+  trader: 'Trader',
+  security: 'Security',
+  portfolioManager: 'Portfolio Manager',
+  file: 'File',
+  sender: 'Sender',
+  recipient: 'Recipient',
+  modifier: 'Modifier',
+  origin: 'Origin',
+  originDevice: 'Origin Device',
+  destination: 'Destination',
+  destinationDevice: 'Destination Device',
+  rawSearch: 'Raw Search',
 }
 
-interface IAttributeInput {
-  field: string
-  value: string
-  onChange: (ev) => void
+export enum EField {
+  Date = 'date',
+  Content = 'content',
+  Subject = 'subject',
+  File = 'file'
 }
-const AttributeInput: React.SFC<IAttributeInput> = props => {
-  switch(props.field) {
-    case 'content':
-    case 'subject':
-      return (
-        <>
-          <span className='text'>.</span>
-          <Select
-            name='attribute'
-            onChange={props.onChange}
-            value={props.value}
-          >
-            <MenuItem value='select'>Select</MenuItem>
-            <MenuItem value="id">ID</MenuItem>
-            <MenuItem value="name">Name</MenuItem>
-          </Select>
-        </>
-      );
-    case 'date':
-      return (
-        <>
-          <Select
-            name='attribute'
-            onChange={props.onChange}
-            value={props.value}
-          >
-            <MenuItem value="on">On</MenuItem>
-            <MenuItem value="before">Before</MenuItem>
-            <MenuItem value="after">After</MenuItem>
-            <MenuItem value="between">Between</MenuItem>
-          </Select>
-        </>
-      );
-  }
+export enum EValueType {
+  String = 'string',
+  Lexicon = 'lexicon',
+  Date = 'date',
+  count = 'count',
+  filesize = 'filesize'
 }
-
-interface IOperatorInput {
+interface IProps {
+  updateLine: (line: string) => void
+}
+interface IRqlBuilderState {
   field: string
   attribute: string
-  value: string
-  onChange: (ev) => void
-}
-const OperatorInput: React.SFC<IOperatorInput> = props => {
-  switch (props.field) {
-    case 'date':
-      switch (props.attribute) {
-        case 'between':
-          return (
-            <Select
-              name='operator'
-              onChange={props.onChange}
-              value={props.value}
-            >
-              <MenuItem value='dates'>Dates</MenuItem>
-              <MenuItem value='months'>Months</MenuItem>
-              <MenuItem value='years'>Years</MenuItem>
-            </Select>
-          )
-        case 'on':
-        case 'before':
-        case 'after':
-          return (
-            <>
-              <Select
-                name='operator'
-                onChange={props.onChange}
-                value={props.value}
-              >
-                <MenuItem value='date'>Date</MenuItem>
-                <MenuItem value='month'>Month</MenuItem>
-                <MenuItem value='year'>Year</MenuItem>
-              </Select>
-            </>
-          )
-        default:
-      }
-      
-    case 'content':
-    case 'subject':
-    default:
-      return (
-        <>
-          <span className='text'>that</span>
-          <Select
-            name='operator'
-            onChange={props.onChange}
-            value={props.value}
-          >
-            <MenuItem value=":">partially matches</MenuItem>
-            <MenuItem value="=">matches exactly</MenuItem>
-          </Select>
-        </>
-      )
-  }
-}
-
-interface IValueTypeInput {
-  field: string
-  value: string
-  onChange: (ev) => void
-}
-const ValueTypeInput: React.SFC<IValueTypeInput> = props => {
-  switch(props.field) {
-    case 'date':
-      return null
-    case 'content':
-    case 'subject':
-    default:
-      return (
-        <>
-          <span className='text'>the</span>
-          <Select
-            name='valueType'
-            onChange={props.onChange}
-            value={props.value}
-          >
-            <MenuItem value='string'>text</MenuItem>
-            <MenuItem value='lexicon'>lexicon</MenuItem>
-            <MenuItem value='date'>date</MenuItem>
-          </Select>
-        </>
-      )
-  }
-}
-
-interface IState {
-  field: "date" | "content" | "subject"
-  attribute: string
   operator: string
-  valueType: "string" | "lexicon" | "date"
-  value: string | Date | [Date, Date]
+  valueType: string
+  value: string | number | Date | [Date, Date]
+  
+  editableRqlString: string
+  dateType: string
 }
-class App extends Component<{}, IState> {
-  state: IState = {
-    field: 'content',
-    attribute: 'select',
-    operator: ':',
+class RQLBuilder extends React.Component<IProps, IRqlBuilderState> {
+  state: IRqlBuilderState = {
+    field: 'event',
+    attribute: 'id',
+    operator: 'EQUALS',
     valueType: 'string',
     value: '',
+    editableRqlString: '',
+    dateType: 'day'
+  }
+  componentDidMount() {
+    this.props.updateLine(this.buildRqlString())
   }
   handleChange = (name, value): void => {
-    if (name === 'field' && value === 'date') {
-      this.setState({ attribute: 'on', operator: 'date', valueType: 'date', value: new Date() })
+    if (name === 'field') {
+      this.setState({
+        value: '',
+        attribute: rqlMetadata[value].default,
+        operator: Object.keys(rqlMetadata[value].qualifiers[rqlMetadata[value].default])[0],
+        valueType: rqlMetadata[value].qualifiers[rqlMetadata[value].default][Object.keys(rqlMetadata[value].qualifiers[rqlMetadata[value].default])[0]][0][0].type
+      })
+      //Object.keys(rqlMetadata[value].qualifiers[rqlMetadata[value].default])[0][0][0]
+      //rqlMetadata[field].qualifiers[attribute][operator][0].map(t => t.type)
     }
-    if ((name === 'field') && (value === 'content' || value === 'subject')) {
-      this.setState({ attribute: 'select', operator: ':' })
-    }
-    if (name === 'attribute' && value === 'between') {
-      this.setState({ operator: 'dates', value: [new Date(), new Date()] })
+    if (name === 'attribute') {
+      this.setState({
+        operator: Object.keys(rqlMetadata[this.state.field].qualifiers[value])[0],
+        valueType: rqlMetadata[this.state.field].qualifiers[value][Object.keys(rqlMetadata[this.state.field].qualifiers[value])[0]][0][0].type
+      })
     }
     if (name === 'valueType') {
-      if (value === 'date') {
-        this.setState({ value: new Date() })
-      } else {
-        this.setState({ value: '' })
-      }
+      this.setState({ value: '' })
     }
-    this.setState({ [name]: value } as Pick<IState, keyof IState>)
+    if (name === 'field' && (value === 'date' || value === 'ingested')) {
+      this.setState({ value: new Date() })
+    }
+    if (name === 'attribute' && value === 'between') {
+      this.setState({ value: [new Date(), new Date()] })
+    }
+    if ((name === 'attribute') && (value === 'before' || value === 'after' || value === 'on')) {
+      this.setState({ value: new Date() })
+    }
+    this.setState({ [name]: value } as Pick<IRqlBuilderState, keyof IRqlBuilderState>, () => {
+      this.props.updateLine(this.buildRqlString())
+    })
+  }
+  buildRqlString = () => {
+    return `${this.state.field}`
+    + `.${this.state.attribute}`
+    + `${this.buildOperator(this.state.operator)}`
+    + `${this.buildValue(this.state.value, this.state.valueType, this.state.operator)}`
   }
   buildValue = (val, type, operator) => {
     switch (type) {
@@ -293,37 +132,44 @@ class App extends Component<{}, IState> {
         return `"${val}"`
       case 'lexicon':
         return `{${val}}`
-      case 'date':
-        switch (operator) {
-          case 'years':
-            return `[${format(val[0], 'YYYY')} TO ${format(val[1], 'YYYY')}]`
-          case 'months':
-            return `[${format(val[0], 'YYYY/MM')} TO ${format(val[1], 'YYYY/MM')}]`
-          case 'dates':
-            return `[${format(val[0], 'YYYY/MM/d')} TO ${format(val[1], 'YYYY/MM/d')}]`
+      case 'datetime':
+        switch (this.state.dateType) {
           case 'year':
             return format(val, 'YYYY')
           case 'month':
             return format(val, 'YYYY/MM')
-          case 'date':
-          default:
+          case 'day':
             return format(val, 'YYYY/MM/d')
+        }
+      case 'datetime-range':
+        switch (this.state.dateType) {
+          case 'year':
+            return `[${format(val[0], 'YYYY')} TO ${format(val[1], 'YYYY')}]`
+          case 'month':
+            return `[${format(val[0], 'YYYY/MM')} TO ${format(val[1], 'YYYY/MM')}]`
+          case 'day':
+            return `[${format(val[0], 'YYYY/MM/d')} TO ${format(val[1], 'YYYY/MM/d')}]`
         }
       default:
         return val
     }
   }
-  buildOperator = (operator) => {
+  buildOperator = operator => {
     switch (operator) {
-      case '=':
+      case 'EQUALS':
         return '='
-      case ':':
-      case 'date':
-      case 'month':
-      case 'year':
+      case 'GT':
+        return '>'
+      case 'LT':
+        return '<'
+      case 'GTE':
+        return '>='
+      case 'LTE':
+        return '<='
+      case 'COLON':
+        return ':'
       default:
         return ":"
-      
     }
   }
   buildAttribute = attribute => {
@@ -334,21 +180,23 @@ class App extends Component<{}, IState> {
         return `.${this.state.attribute}`
     }
   }
+  
   render() {
+    
     return (
       <div style={{ margin: 16, padding: 16 }}>
         <div style={{ margin: 16, display: 'flex', alignItems: 'center' }}>
           <span className='text'>Select</span>
           <Select
-            name='field'
-            onChange={ev => this.handleChange((ev.target as any).name, (ev.target as any).value)}
+            className='input'
+            onChange={ev => this.handleChange("field", (ev.target as any).value)}
             value={this.state.field}
           >
-            <MenuItem value="content">Content</MenuItem>
-            <MenuItem value="subject">Subject</MenuItem>
-            <MenuItem value="date">Date</MenuItem>
+            {Object.keys(rqlMetadata).map(field => (
+              <MenuItem key={field} value={field}>{fieldMap[field]}</MenuItem>
+            ))}
           </Select>
-          
+
           <AttributeInput
             field={this.state.field}
             value={this.state.attribute}
@@ -364,28 +212,109 @@ class App extends Component<{}, IState> {
           
           <ValueTypeInput
             field={this.state.field}
+            attribute={this.state.attribute}
+            operator={this.state.operator}
             value={this.state.valueType}
             onChange={ev => this.handleChange('valueType', (ev.target as any).value)}
           />
           
           <ValueInput
             field={this.state.field}
+            attribute={this.state.attribute}
             operator={this.state.operator}
             type={this.state.valueType}
             value={this.state.value}
             onChange={value => this.handleChange('value', value)}
+            dateType={this.state.dateType}
+            updateDateType={dateType => this.setState({ dateType })}
           />
-        </div>
-        <div style={{ margin: 16 }}>
-          <div>Raw RQL</div>
-          <div style={{ padding: 16, border: '1px solid #ddd' }}>
 
-            {`${this.state.field}${this.buildAttribute(this.state.attribute)}${this.buildOperator(this.state.operator)}${this.buildValue(this.state.value, this.state.valueType, this.state.operator)}`}
-          </div>
+          
         </div>
+        
       </div>
     );
   }
 }
 
-export default App;
+interface IState {
+  rqlLines: string[]
+  editingRawRql: boolean
+  editableRqlStrings: string
+  rqlBool: 'AND' | 'OR'
+}
+export default class App extends React.Component<{}, IState> {
+  state: IState = {
+    rqlLines: [''],
+    editingRawRql: false,
+    editableRqlStrings: '',
+    rqlBool: 'AND'
+  }
+  updateLine = (line, i) => {
+    this.setState(state => {
+      const lines = state.rqlLines;
+      lines[i] = line;
+      return ({ rqlLines: lines })
+    })
+  }
+  addLine = () => {
+    this.setState(state => ({ rqlLines: [...state.rqlLines, ''] }))
+  }
+  removeLine = () => {
+    this.setState(state => ({ rqlLines: state.rqlLines.slice(0, -1) }))
+  }
+  
+  render () {
+    return (
+      <div>
+        <div
+          style={{
+            display: 'flex', alignItems: 'center',
+            padding: '0 128px',
+            fontSize: 36,
+            color: '#eee',
+            background: '#36b90a'
+          }}
+        >
+          <span style={{ fontSize: 96 }}>🧙‍♂️</span>
+          RQL Wizard 
+        </div>
+        {this.state.rqlLines.map((_, i) => (
+          <Paper key={i} style={{ margin: '16px 128px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <RQLBuilder  updateLine={line => this.updateLine(line, i)} />
+            {i + 1 === this.state.rqlLines.length && (
+              <IconButton color='primary' onClick={this.addLine}>
+                <PlusIcon />
+              </IconButton>
+            )}
+            {this.state.rqlLines.length > 1 && i + 1 === this.state.rqlLines.length && (
+              <IconButton color='secondary' onClick={this.removeLine}>
+                <RemoveIcon />
+              </IconButton>
+            )}
+          </Paper>
+        ))}
+        <div style={{ margin: '16px 0', padding: '16px 128px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <div>Raw RQL</div>
+            <div>
+              <span className='text'>Logical Operator:</span>
+              <Select value={this.state.rqlBool} onChange={ev => this.setState({ rqlBool: (ev.target as any).value })}>
+                <MenuItem value='AND'>AND</MenuItem>
+                <MenuItem value='OR'>OR</MenuItem>
+              </Select>
+            </div>
+          </div>
+          <Paper style={{ padding: 16, border: '1px solid #ddd' }}>
+            {this.state.rqlLines.map((line, i) => (
+              <div key={`${i}-${line}`}>
+                {i > 0 && <div>{this.state.rqlBool}</div>}
+                <p>{line}</p>
+              </div>
+            ))}
+          </Paper>
+        </div>
+      </div>
+    );
+  }
+}

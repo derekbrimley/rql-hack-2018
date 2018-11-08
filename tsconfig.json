@@ -1,9 +1,9 @@
 {
   "jsx": "react",
   "compilerOptions": {
-    "target": "esnext",
+    "target": "es2015",
     "allowJs": true,
-    "lib": ["es7"],
+    "lib": ["dom", "es7"],
     "skipLibCheck": false,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,

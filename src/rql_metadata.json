@@ -1,0 +1,1558 @@
+{
+  "event": {
+    "default": "id",
+    "qualifiers": {
+      "id": {
+        "COLON": [
+          [
+            {
+              "type": "string"
+            }
+          ]
+        ],
+        "EQUALS": [
+          [
+            {
+              "type": "string"
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "content": {
+    "default": "match",
+    "qualifiers": {
+      "match": {
+        "COLON": [
+          [
+            {
+              "type": "lexicon",
+              "lexicons": [
+                "Autoreply Phrases",
+                "Competitor Domains",
+                "Confidential Content",
+                "Confidential Words",
+                "Criminal Justice System Words",
+                "Disclaimer Ngrams",
+                "Distraught Words",
+                "Domestic Media Domains",
+                "Evade Oversight Words",
+                "Exploitation Words",
+                "Financial Distress Words",
+                "Financial Risk Domains",
+                "Flight Risk Domains",
+                "Flight Risk Words",
+                "Foreign Media Domains",
+                "Foreign Political Domains",
+                "Hurry Words",
+                "Improper Access Words",
+                "Internal Domains",
+                "Personal Domains",
+                "Private Words",
+                "Sexually Explicit Words",
+                "Social Media Domains",
+                "Termination Words",
+                "Threatening Words",
+                "US Federal Agency Domains",
+                "US House Domains",
+                "US Senate Domains",
+                "Workplace Violence Words"
+              ]
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "proximity"
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "rawcontent": {
+    "default": "match",
+    "qualifiers": {
+      "match": {
+        "COLON": [
+          [
+            {
+              "type": "lexicon",
+              "lexicons": [
+                "Autoreply Phrases",
+                "Competitor Domains",
+                "Confidential Content",
+                "Confidential Words",
+                "Criminal Justice System Words",
+                "Disclaimer Ngrams",
+                "Distraught Words",
+                "Domestic Media Domains",
+                "Evade Oversight Words",
+                "Exploitation Words",
+                "Financial Distress Words",
+                "Financial Risk Domains",
+                "Flight Risk Domains",
+                "Flight Risk Words",
+                "Foreign Media Domains",
+                "Foreign Political Domains",
+                "Hurry Words",
+                "Improper Access Words",
+                "Internal Domains",
+                "Personal Domains",
+                "Private Words",
+                "Sexually Explicit Words",
+                "Social Media Domains",
+                "Termination Words",
+                "Threatening Words",
+                "US Federal Agency Domains",
+                "US House Domains",
+                "US Senate Domains",
+                "Workplace Violence Words"
+              ]
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "proximity"
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "subject": {
+    "default": "match",
+    "qualifiers": {
+      "match": {
+        "COLON": [
+          [
+            {
+              "type": "lexicon",
+              "lexicons": [
+                "Autoreply Phrases",
+                "Competitor Domains",
+                "Confidential Content",
+                "Confidential Words",
+                "Criminal Justice System Words",
+                "Disclaimer Ngrams",
+                "Distraught Words",
+                "Domestic Media Domains",
+                "Evade Oversight Words",
+                "Exploitation Words",
+                "Financial Distress Words",
+                "Financial Risk Domains",
+                "Flight Risk Domains",
+                "Flight Risk Words",
+                "Foreign Media Domains",
+                "Foreign Political Domains",
+                "Hurry Words",
+                "Improper Access Words",
+                "Internal Domains",
+                "Personal Domains",
+                "Private Words",
+                "Sexually Explicit Words",
+                "Social Media Domains",
+                "Termination Words",
+                "Threatening Words",
+                "US Federal Agency Domains",
+                "US House Domains",
+                "US Senate Domains",
+                "Workplace Violence Words"
+              ]
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "proximity"
+            }
+          ]
+        ],
+        "EQUALS": [
+          [
+            {
+              "type": "lexicon",
+              "lexicons": [
+                "Autoreply Phrases",
+                "Competitor Domains",
+                "Confidential Content",
+                "Confidential Words",
+                "Criminal Justice System Words",
+                "Disclaimer Ngrams",
+                "Distraught Words",
+                "Domestic Media Domains",
+                "Evade Oversight Words",
+                "Exploitation Words",
+                "Financial Distress Words",
+                "Financial Risk Domains",
+                "Flight Risk Domains",
+                "Flight Risk Words",
+                "Foreign Media Domains",
+                "Foreign Political Domains",
+                "Hurry Words",
+                "Improper Access Words",
+                "Internal Domains",
+                "Personal Domains",
+                "Private Words",
+                "Sexually Explicit Words",
+                "Social Media Domains",
+                "Termination Words",
+                "Threatening Words",
+                "US Federal Agency Domains",
+                "US House Domains",
+                "US Senate Domains",
+                "Workplace Violence Words"
+              ]
+            },
+            {
+              "type": "string"
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "body": {
+    "default": "match",
+    "qualifiers": {
+      "match": {
+        "COLON": [
+          [
+            {
+              "type": "lexicon",
+              "lexicons": [
+                "Autoreply Phrases",
+                "Competitor Domains",
+                "Confidential Content",
+                "Confidential Words",
+                "Criminal Justice System Words",
+                "Disclaimer Ngrams",
+                "Distraught Words",
+                "Domestic Media Domains",
+                "Evade Oversight Words",
+                "Exploitation Words",
+                "Financial Distress Words",
+                "Financial Risk Domains",
+                "Flight Risk Domains",
+                "Flight Risk Words",
+                "Foreign Media Domains",
+                "Foreign Political Domains",
+                "Hurry Words",
+                "Improper Access Words",
+                "Internal Domains",
+                "Personal Domains",
+                "Private Words",
+                "Sexually Explicit Words",
+                "Social Media Domains",
+                "Termination Words",
+                "Threatening Words",
+                "US Federal Agency Domains",
+                "US House Domains",
+                "US Senate Domains",
+                "Workplace Violence Words"
+              ]
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "proximity"
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "rawbody": {
+    "default": "match",
+    "qualifiers": {
+      "match": {
+        "COLON": [
+          [
+            {
+              "type": "lexicon",
+              "lexicons": [
+                "Autoreply Phrases",
+                "Competitor Domains",
+                "Confidential Content",
+                "Confidential Words",
+                "Criminal Justice System Words",
+                "Disclaimer Ngrams",
+                "Distraught Words",
+                "Domestic Media Domains",
+                "Evade Oversight Words",
+                "Exploitation Words",
+                "Financial Distress Words",
+                "Financial Risk Domains",
+                "Flight Risk Domains",
+                "Flight Risk Words",
+                "Foreign Media Domains",
+                "Foreign Political Domains",
+                "Hurry Words",
+                "Improper Access Words",
+                "Internal Domains",
+                "Personal Domains",
+                "Private Words",
+                "Sexually Explicit Words",
+                "Social Media Domains",
+                "Termination Words",
+                "Threatening Words",
+                "US Federal Agency Domains",
+                "US House Domains",
+                "US Senate Domains",
+                "Workplace Violence Words"
+              ]
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "proximity"
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "entity": {
+    "default": "match",
+    "qualifiers": {
+      "filter": {
+        "COLON": [
+          [
+            {
+              "type": "entity-filter",
+              "roles": [
+                "sender",
+                "recipient",
+                "recipientTo",
+                "recipientBcc",
+                "recipientCc",
+                "trader",
+                "portfolioManager",
+                "security",
+                "origin",
+                "originDevice",
+                "destination",
+                "destinationDevice",
+                "modifier"
+              ]
+            }
+          ]
+        ]
+      },
+      "aka": {
+        "COLON": [
+          [
+            {
+              "type": "string"
+            }
+          ]
+        ],
+        "EQUALS": [
+          [
+            {
+              "type": "string"
+            }
+          ]
+        ]
+      },
+      "count": {
+        "COLON": [
+          [
+            {
+              "type": "entity-count",
+              "roles": [
+                "sender",
+                "recipient",
+                "recipientTo",
+                "recipientBcc",
+                "recipientCc",
+                "trader",
+                "portfolioManager",
+                "security",
+                "origin",
+                "originDevice",
+                "destination",
+                "destinationDevice",
+                "modifier"
+              ]
+            }
+          ]
+        ],
+        "LT": [
+          [
+            {
+              "type": "int"
+            }
+          ]
+        ],
+        "LTE": [
+          [
+            {
+              "type": "int"
+            }
+          ]
+        ],
+        "GT": [
+          [
+            {
+              "type": "int"
+            }
+          ]
+        ],
+        "EQUALS": [
+          [
+            {
+              "type": "int"
+            }
+          ]
+        ],
+        "GTE": [
+          [
+            {
+              "type": "int"
+            }
+          ]
+        ]
+      },
+      "match": {
+        "COLON": [
+          [
+            {
+              "type": "lexicon",
+              "lexicons": [
+                "Autoreply Phrases",
+                "Competitor Domains",
+                "Confidential Content",
+                "Confidential Words",
+                "Criminal Justice System Words",
+                "Disclaimer Ngrams",
+                "Distraught Words",
+                "Domestic Media Domains",
+                "Evade Oversight Words",
+                "Exploitation Words",
+                "Financial Distress Words",
+                "Financial Risk Domains",
+                "Flight Risk Domains",
+                "Flight Risk Words",
+                "Foreign Media Domains",
+                "Foreign Political Domains",
+                "Hurry Words",
+                "Improper Access Words",
+                "Internal Domains",
+                "Personal Domains",
+                "Private Words",
+                "Sexually Explicit Words",
+                "Social Media Domains",
+                "Termination Words",
+                "Threatening Words",
+                "US Federal Agency Domains",
+                "US House Domains",
+                "US Senate Domains",
+                "Workplace Violence Words"
+              ]
+            },
+            {
+              "type": "entity-lexicon",
+              "roles": [
+                "sender",
+                "recipient",
+                "recipientTo",
+                "recipientBcc",
+                "recipientCc",
+                "trader",
+                "portfolioManager",
+                "security",
+                "origin",
+                "originDevice",
+                "destination",
+                "destinationDevice",
+                "modifier"
+              ],
+              "lexicons": [
+                "Autoreply Phrases",
+                "Competitor Domains",
+                "Confidential Content",
+                "Confidential Words",
+                "Criminal Justice System Words",
+                "Disclaimer Ngrams",
+                "Distraught Words",
+                "Domestic Media Domains",
+                "Evade Oversight Words",
+                "Exploitation Words",
+                "Financial Distress Words",
+                "Financial Risk Domains",
+                "Flight Risk Domains",
+                "Flight Risk Words",
+                "Foreign Media Domains",
+                "Foreign Political Domains",
+                "Hurry Words",
+                "Improper Access Words",
+                "Internal Domains",
+                "Personal Domains",
+                "Private Words",
+                "Sexually Explicit Words",
+                "Social Media Domains",
+                "Termination Words",
+                "Threatening Words",
+                "US Federal Agency Domains",
+                "US House Domains",
+                "US Senate Domains",
+                "Workplace Violence Words"
+              ]
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "entity",
+              "roles": [
+                "sender",
+                "recipient",
+                "recipientTo",
+                "recipientBcc",
+                "recipientCc",
+                "trader",
+                "portfolioManager",
+                "security",
+                "origin",
+                "originDevice",
+                "destination",
+                "destinationDevice",
+                "modifier"
+              ]
+            }
+          ]
+        ],
+        "EQUALS": [
+          [
+            {
+              "type": "lexicon",
+              "lexicons": [
+                "Autoreply Phrases",
+                "Competitor Domains",
+                "Confidential Content",
+                "Confidential Words",
+                "Criminal Justice System Words",
+                "Disclaimer Ngrams",
+                "Distraught Words",
+                "Domestic Media Domains",
+                "Evade Oversight Words",
+                "Exploitation Words",
+                "Financial Distress Words",
+                "Financial Risk Domains",
+                "Flight Risk Domains",
+                "Flight Risk Words",
+                "Foreign Media Domains",
+                "Foreign Political Domains",
+                "Hurry Words",
+                "Improper Access Words",
+                "Internal Domains",
+                "Personal Domains",
+                "Private Words",
+                "Sexually Explicit Words",
+                "Social Media Domains",
+                "Termination Words",
+                "Threatening Words",
+                "US Federal Agency Domains",
+                "US House Domains",
+                "US Senate Domains",
+                "Workplace Violence Words"
+              ]
+            },
+            {
+              "type": "string"
+            }
+          ]
+        ]
+      },
+      "id": {
+        "COLON": [
+          [
+            {
+              "type": "string"
+            }
+          ]
+        ],
+        "EQUALS": [
+          [
+            {
+              "type": "string"
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "attribute": {
+    "default": "filter",
+    "qualifiers": {
+      "filter": {
+        "COLON": [
+          [
+            {
+              "type": "event-filter"
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "context": {
+    "default": "related",
+    "qualifiers": {
+      "related": {
+        "EQUALS": [
+          [
+            {
+              "type": "string"
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "date": {
+    "default": "on",
+    "qualifiers": {
+      "before": {
+        "COLON": [
+          [
+            {
+              "type": "datetime"
+            }
+          ]
+        ]
+      },
+      "after": {
+        "COLON": [
+          [
+            {
+              "type": "datetime"
+            }
+          ]
+        ]
+      },
+      "between": {
+        "COLON": [
+          [
+            {
+              "type": "datetime-range"
+            }
+          ]
+        ]
+      },
+      "on": {
+        "COLON": [
+          [
+            {
+              "type": "datetime"
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "ingested": {
+    "default": "on",
+    "qualifiers": {
+      "before": {
+        "COLON": [
+          [
+            {
+              "type": "datetime"
+            }
+          ]
+        ]
+      },
+      "after": {
+        "COLON": [
+          [
+            {
+              "type": "datetime"
+            }
+          ]
+        ]
+      },
+      "between": {
+        "COLON": [
+          [
+            {
+              "type": "datetime-range"
+            }
+          ]
+        ]
+      },
+      "on": {
+        "COLON": [
+          [
+            {
+              "type": "datetime"
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "mode": {
+    "default": "match",
+    "qualifiers": {
+      "match": {
+        "COLON": [
+          [
+            {
+              "type": "string"
+            }
+          ]
+        ],
+        "EQUALS": [
+          [
+            {
+              "type": "string"
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "label": {
+    "default": "match",
+    "qualifiers": {
+      "match": {
+        "COLON": [
+          [
+            {
+              "type": "string"
+            }
+          ]
+        ],
+        "EQUALS": [
+          [
+            {
+              "type": "string"
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "reviewed": {
+    "default": "status",
+    "qualifiers": {
+      "ever": {
+        "COLON": [
+          [
+            {
+              "type": "string"
+            }
+          ]
+        ],
+        "EQUALS": [
+          [
+            {
+              "type": "string"
+            }
+          ]
+        ]
+      },
+      "by": {
+        "COLON": [
+          [
+            {
+              "type": "string"
+            }
+          ]
+        ],
+        "EQUALS": [
+          [
+            {
+              "type": "string"
+            }
+          ]
+        ]
+      },
+      "status": {
+        "COLON": [
+          [
+            {
+              "type": "string"
+            }
+          ]
+        ],
+        "EQUALS": [
+          [
+            {
+              "type": "string"
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "feature": {
+    "default": "percentile",
+    "qualifiers": {
+      "percentile": {
+        "COLON": [
+          [
+            {
+              "type": "inner-range"
+            },
+            {
+              "type": "inner-comparison"
+            }
+          ]
+        ],
+        "EQUALS": [
+          [
+            {
+              "type": "inner-range"
+            },
+            {
+              "type": "inner-comparison"
+            }
+          ]
+        ]
+      },
+      "category": {
+        "COLON": [
+          [
+            {
+              "type": "category-comparison"
+            }
+          ]
+        ],
+        "EQUALS": [
+          [
+            {
+              "type": "category-comparison"
+            }
+          ]
+        ]
+      },
+      "value": {
+        "COLON": [
+          [
+            {
+              "type": "inner-range"
+            },
+            {
+              "type": "inner-comparison"
+            }
+          ]
+        ],
+        "EQUALS": [
+          [
+            {
+              "type": "inner-range"
+            },
+            {
+              "type": "inner-comparison"
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "model": {
+    "default": "score",
+    "qualifiers": {
+      "score": {
+        "COLON": [
+          [
+            {
+              "type": "inner-range"
+            },
+            {
+              "type": "inner-comparison"
+            }
+          ]
+        ],
+        "EQUALS": [
+          [
+            {
+              "type": "inner-range"
+            },
+            {
+              "type": "inner-comparison"
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "trader": {
+    "default": "match",
+    "qualifiers": {
+      "match": {
+        "COLON": [
+          [
+            {
+              "type": "string"
+            }
+          ]
+        ],
+        "EQUALS": [
+          [
+            {
+              "type": "string"
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "security": {
+    "default": "match",
+    "qualifiers": {
+      "match": {
+        "COLON": [
+          [
+            {
+              "type": "string"
+            }
+          ]
+        ],
+        "EQUALS": [
+          [
+            {
+              "type": "string"
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "portfolioManager": {
+    "default": "match",
+    "qualifiers": {
+      "match": {
+        "COLON": [
+          [
+            {
+              "type": "string"
+            }
+          ]
+        ],
+        "EQUALS": [
+          [
+            {
+              "type": "string"
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "file": {
+    "default": "content",
+    "qualifiers": {
+      "filter": {
+        "COLON": [
+          [
+            {
+              "type": "attachment-attribute"
+            }
+          ]
+        ]
+      },
+      "bytes": {
+        "LT": [
+          [
+            {
+              "type": "bytes"
+            }
+          ]
+        ],
+        "LTE": [
+          [
+            {
+              "type": "bytes"
+            }
+          ]
+        ],
+        "GT": [
+          [
+            {
+              "type": "bytes"
+            }
+          ]
+        ],
+        "EQUALS": [
+          [
+            {
+              "type": "bytes"
+            }
+          ]
+        ],
+        "GTE": [
+          [
+            {
+              "type": "bytes"
+            }
+          ]
+        ]
+      },
+      "count": {
+        "LT": [
+          [
+            {
+              "type": "int"
+            }
+          ]
+        ],
+        "LTE": [
+          [
+            {
+              "type": "int"
+            }
+          ]
+        ],
+        "GT": [
+          [
+            {
+              "type": "int"
+            }
+          ]
+        ],
+        "EQUALS": [
+          [
+            {
+              "type": "int"
+            }
+          ]
+        ],
+        "GTE": [
+          [
+            {
+              "type": "int"
+            }
+          ]
+        ]
+      },
+      "name": {
+        "COLON": [
+          [
+            {
+              "type": "lexicon",
+              "lexicons": [
+                "Autoreply Phrases",
+                "Competitor Domains",
+                "Confidential Content",
+                "Confidential Words",
+                "Criminal Justice System Words",
+                "Disclaimer Ngrams",
+                "Distraught Words",
+                "Domestic Media Domains",
+                "Evade Oversight Words",
+                "Exploitation Words",
+                "Financial Distress Words",
+                "Financial Risk Domains",
+                "Flight Risk Domains",
+                "Flight Risk Words",
+                "Foreign Media Domains",
+                "Foreign Political Domains",
+                "Hurry Words",
+                "Improper Access Words",
+                "Internal Domains",
+                "Personal Domains",
+                "Private Words",
+                "Sexually Explicit Words",
+                "Social Media Domains",
+                "Termination Words",
+                "Threatening Words",
+                "US Federal Agency Domains",
+                "US House Domains",
+                "US Senate Domains",
+                "Workplace Violence Words"
+              ]
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "proximity"
+            }
+          ]
+        ],
+        "EQUALS": [
+          [
+            {
+              "type": "lexicon",
+              "lexicons": [
+                "Autoreply Phrases",
+                "Competitor Domains",
+                "Confidential Content",
+                "Confidential Words",
+                "Criminal Justice System Words",
+                "Disclaimer Ngrams",
+                "Distraught Words",
+                "Domestic Media Domains",
+                "Evade Oversight Words",
+                "Exploitation Words",
+                "Financial Distress Words",
+                "Financial Risk Domains",
+                "Flight Risk Domains",
+                "Flight Risk Words",
+                "Foreign Media Domains",
+                "Foreign Political Domains",
+                "Hurry Words",
+                "Improper Access Words",
+                "Internal Domains",
+                "Personal Domains",
+                "Private Words",
+                "Sexually Explicit Words",
+                "Social Media Domains",
+                "Termination Words",
+                "Threatening Words",
+                "US Federal Agency Domains",
+                "US House Domains",
+                "US Senate Domains",
+                "Workplace Violence Words"
+              ]
+            },
+            {
+              "type": "string"
+            }
+          ]
+        ]
+      },
+      "body": {
+        "COLON": [
+          [
+            {
+              "type": "lexicon",
+              "lexicons": [
+                "Autoreply Phrases",
+                "Competitor Domains",
+                "Confidential Content",
+                "Confidential Words",
+                "Criminal Justice System Words",
+                "Disclaimer Ngrams",
+                "Distraught Words",
+                "Domestic Media Domains",
+                "Evade Oversight Words",
+                "Exploitation Words",
+                "Financial Distress Words",
+                "Financial Risk Domains",
+                "Flight Risk Domains",
+                "Flight Risk Words",
+                "Foreign Media Domains",
+                "Foreign Political Domains",
+                "Hurry Words",
+                "Improper Access Words",
+                "Internal Domains",
+                "Personal Domains",
+                "Private Words",
+                "Sexually Explicit Words",
+                "Social Media Domains",
+                "Termination Words",
+                "Threatening Words",
+                "US Federal Agency Domains",
+                "US House Domains",
+                "US Senate Domains",
+                "Workplace Violence Words"
+              ]
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "proximity"
+            }
+          ]
+        ]
+      },
+      "content": {
+        "COLON": [
+          [
+            {
+              "type": "lexicon",
+              "lexicons": [
+                "Autoreply Phrases",
+                "Competitor Domains",
+                "Confidential Content",
+                "Confidential Words",
+                "Criminal Justice System Words",
+                "Disclaimer Ngrams",
+                "Distraught Words",
+                "Domestic Media Domains",
+                "Evade Oversight Words",
+                "Exploitation Words",
+                "Financial Distress Words",
+                "Financial Risk Domains",
+                "Flight Risk Domains",
+                "Flight Risk Words",
+                "Foreign Media Domains",
+                "Foreign Political Domains",
+                "Hurry Words",
+                "Improper Access Words",
+                "Internal Domains",
+                "Personal Domains",
+                "Private Words",
+                "Sexually Explicit Words",
+                "Social Media Domains",
+                "Termination Words",
+                "Threatening Words",
+                "US Federal Agency Domains",
+                "US House Domains",
+                "US Senate Domains",
+                "Workplace Violence Words"
+              ]
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "proximity"
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "sender": {
+    "default": "match",
+    "qualifiers": {
+      "match": {
+        "COLON": [
+          [
+            {
+              "type": "lexicon",
+              "lexicons": [
+                "Autoreply Phrases",
+                "Competitor Domains",
+                "Confidential Content",
+                "Confidential Words",
+                "Criminal Justice System Words",
+                "Disclaimer Ngrams",
+                "Distraught Words",
+                "Domestic Media Domains",
+                "Evade Oversight Words",
+                "Exploitation Words",
+                "Financial Distress Words",
+                "Financial Risk Domains",
+                "Flight Risk Domains",
+                "Flight Risk Words",
+                "Foreign Media Domains",
+                "Foreign Political Domains",
+                "Hurry Words",
+                "Improper Access Words",
+                "Internal Domains",
+                "Personal Domains",
+                "Private Words",
+                "Sexually Explicit Words",
+                "Social Media Domains",
+                "Termination Words",
+                "Threatening Words",
+                "US Federal Agency Domains",
+                "US House Domains",
+                "US Senate Domains",
+                "Workplace Violence Words"
+              ]
+            },
+            {
+              "type": "string"
+            }
+          ]
+        ],
+        "EQUALS": [
+          [
+            {
+              "type": "lexicon",
+              "lexicons": [
+                "Autoreply Phrases",
+                "Competitor Domains",
+                "Confidential Content",
+                "Confidential Words",
+                "Criminal Justice System Words",
+                "Disclaimer Ngrams",
+                "Distraught Words",
+                "Domestic Media Domains",
+                "Evade Oversight Words",
+                "Exploitation Words",
+                "Financial Distress Words",
+                "Financial Risk Domains",
+                "Flight Risk Domains",
+                "Flight Risk Words",
+                "Foreign Media Domains",
+                "Foreign Political Domains",
+                "Hurry Words",
+                "Improper Access Words",
+                "Internal Domains",
+                "Personal Domains",
+                "Private Words",
+                "Sexually Explicit Words",
+                "Social Media Domains",
+                "Termination Words",
+                "Threatening Words",
+                "US Federal Agency Domains",
+                "US House Domains",
+                "US Senate Domains",
+                "Workplace Violence Words"
+              ]
+            },
+            {
+              "type": "string"
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "recipient": {
+    "default": "match",
+    "qualifiers": {
+      "count": {
+        "LT": [
+          [
+            {
+              "type": "int"
+            }
+          ]
+        ],
+        "LTE": [
+          [
+            {
+              "type": "int"
+            }
+          ]
+        ],
+        "GT": [
+          [
+            {
+              "type": "int"
+            }
+          ]
+        ],
+        "EQUALS": [
+          [
+            {
+              "type": "int"
+            }
+          ]
+        ],
+        "GTE": [
+          [
+            {
+              "type": "int"
+            }
+          ]
+        ]
+      },
+      "match": {
+        "COLON": [
+          [
+            {
+              "type": "lexicon",
+              "lexicons": [
+                "Autoreply Phrases",
+                "Competitor Domains",
+                "Confidential Content",
+                "Confidential Words",
+                "Criminal Justice System Words",
+                "Disclaimer Ngrams",
+                "Distraught Words",
+                "Domestic Media Domains",
+                "Evade Oversight Words",
+                "Exploitation Words",
+                "Financial Distress Words",
+                "Financial Risk Domains",
+                "Flight Risk Domains",
+                "Flight Risk Words",
+                "Foreign Media Domains",
+                "Foreign Political Domains",
+                "Hurry Words",
+                "Improper Access Words",
+                "Internal Domains",
+                "Personal Domains",
+                "Private Words",
+                "Sexually Explicit Words",
+                "Social Media Domains",
+                "Termination Words",
+                "Threatening Words",
+                "US Federal Agency Domains",
+                "US House Domains",
+                "US Senate Domains",
+                "Workplace Violence Words"
+              ]
+            },
+            {
+              "type": "string"
+            }
+          ]
+        ],
+        "EQUALS": [
+          [
+            {
+              "type": "lexicon",
+              "lexicons": [
+                "Autoreply Phrases",
+                "Competitor Domains",
+                "Confidential Content",
+                "Confidential Words",
+                "Criminal Justice System Words",
+                "Disclaimer Ngrams",
+                "Distraught Words",
+                "Domestic Media Domains",
+                "Evade Oversight Words",
+                "Exploitation Words",
+                "Financial Distress Words",
+                "Financial Risk Domains",
+                "Flight Risk Domains",
+                "Flight Risk Words",
+                "Foreign Media Domains",
+                "Foreign Political Domains",
+                "Hurry Words",
+                "Improper Access Words",
+                "Internal Domains",
+                "Personal Domains",
+                "Private Words",
+                "Sexually Explicit Words",
+                "Social Media Domains",
+                "Termination Words",
+                "Threatening Words",
+                "US Federal Agency Domains",
+                "US House Domains",
+                "US Senate Domains",
+                "Workplace Violence Words"
+              ]
+            },
+            {
+              "type": "string"
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "modifier": {
+    "default": "match",
+    "qualifiers": {
+      "match": {
+        "COLON": [
+          [
+            {
+              "type": "string"
+            }
+          ]
+        ],
+        "EQUALS": [
+          [
+            {
+              "type": "string"
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "origin": {
+    "default": "match",
+    "qualifiers": {
+      "match": {
+        "COLON": [
+          [
+            {
+              "type": "string"
+            }
+          ]
+        ],
+        "EQUALS": [
+          [
+            {
+              "type": "string"
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "originDevice": {
+    "default": "match",
+    "qualifiers": {
+      "match": {
+        "COLON": [
+          [
+            {
+              "type": "string"
+            }
+          ]
+        ],
+        "EQUALS": [
+          [
+            {
+              "type": "string"
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "destination": {
+    "default": "match",
+    "qualifiers": {
+      "match": {
+        "COLON": [
+          [
+            {
+              "type": "string"
+            }
+          ]
+        ],
+        "EQUALS": [
+          [
+            {
+              "type": "string"
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "destinationDevice": {
+    "default": "match",
+    "qualifiers": {
+      "match": {
+        "COLON": [
+          [
+            {
+              "type": "string"
+            }
+          ]
+        ],
+        "EQUALS": [
+          [
+            {
+              "type": "string"
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "rawSearch": {
+    "default": "",
+    "qualifiers": {
+      "": {
+        "COLON": [
+          [
+            {
+              "type": "raw"
+            }
+          ]
+        ],
+        "EQUALS": [
+          [
+            {
+              "type": "raw"
+            }
+          ]
+        ]
+      }
+    }
+  }
+}
