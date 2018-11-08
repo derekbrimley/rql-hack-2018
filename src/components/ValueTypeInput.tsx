@@ -2,7 +2,6 @@ import React from 'react';
 import '../App.css';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
-import { EField } from '../App';
 import rqlMetadata from '../rql_metadata.json';
 
 interface IValueTypeInput {
@@ -17,7 +16,6 @@ const getValueTypes = (field, attribute, operator) => {
 }
 const ValueTypeInput: React.SFC<IValueTypeInput> = props => {
   const valueTypes = getValueTypes(props.field, props.attribute, props.operator)
-  console.log(valueTypes)
   return (
     valueTypes.length > 1 && (
       <>

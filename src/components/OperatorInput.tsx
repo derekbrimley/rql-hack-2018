@@ -3,8 +3,8 @@ import '../App.css';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import 'react-month-picker-input/dist/react-month-picker-input.css';
-import { EField } from '../App';
 import rqlMetadata from '../rql_metadata.json';
+
 interface IOperatorInput {
   field: string
   attribute: string

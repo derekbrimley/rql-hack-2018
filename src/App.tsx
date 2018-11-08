@@ -2,20 +2,17 @@ import React from 'react';
 import './App.css';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
-import TextField from '@material-ui/core/TextField';
 import format from 'date-fns/format';
 import 'react-month-picker-input/dist/react-month-picker-input.css';
 import IconButton from '@material-ui/core/IconButton';
-import Button from '@material-ui/core/Button';
 import ValueInput from './components/ValueInput';
 import AttributeInput from './components/AttributeInput';
 import OperatorInput from './components/OperatorInput';
 import ValueTypeInput from './components/ValueTypeInput';
 import PlusIcon from '@material-ui/icons/Add';
 import RemoveIcon from '@material-ui/icons/Delete';
-
-import rqlMetadata from './rql_metadata.json';
 import Paper from '@material-ui/core/Paper';
+import rqlMetadata from './rql_metadata.json';
 
 const fieldMap = {
   event: 'Event',
@@ -70,7 +67,6 @@ interface IRqlBuilderState {
   operator: string
   valueType: string
   value: string | number | Date | [Date, Date]
-  
   editableRqlString: string
   dateType: string
 }
@@ -95,8 +91,6 @@ class RQLBuilder extends React.Component<IProps, IRqlBuilderState> {
         operator: Object.keys(rqlMetadata[value].qualifiers[rqlMetadata[value].default])[0],
         valueType: rqlMetadata[value].qualifiers[rqlMetadata[value].default][Object.keys(rqlMetadata[value].qualifiers[rqlMetadata[value].default])[0]][0][0].type
       })
-      //Object.keys(rqlMetadata[value].qualifiers[rqlMetadata[value].default])[0][0][0]
-      //rqlMetadata[field].qualifiers[attribute][operator][0].map(t => t.type)
     }
     if (name === 'attribute') {
       this.setState({
@@ -124,9 +118,9 @@ class RQLBuilder extends React.Component<IProps, IRqlBuilderState> {
     return `${this.state.field}`
     + `.${this.state.attribute}`
     + `${this.buildOperator(this.state.operator)}`
-    + `${this.buildValue(this.state.value, this.state.valueType, this.state.operator)}`
+    + `${this.buildValue(this.state.value, this.state.valueType)}`
   }
-  buildValue = (val, type, operator) => {
+  buildValue = (val, type) => {
     switch (type) {
       case 'string':
         return `"${val}"`
@@ -172,17 +166,8 @@ class RQLBuilder extends React.Component<IProps, IRqlBuilderState> {
         return ":"
     }
   }
-  buildAttribute = attribute => {
-    switch (attribute) {
-      case 'select':
-        return ''
-      default:
-        return `.${this.state.attribute}`
-    }
-  }
   
   render() {
-    
     return (
       <div style={{ margin: 16, padding: 16 }}>
         <div style={{ margin: 16, display: 'flex', alignItems: 'center' }}>
@@ -228,10 +213,7 @@ class RQLBuilder extends React.Component<IProps, IRqlBuilderState> {
             dateType={this.state.dateType}
             updateDateType={dateType => this.setState({ dateType })}
           />
-
-          
         </div>
-        
       </div>
     );
   }
